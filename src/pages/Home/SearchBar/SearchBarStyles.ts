@@ -11,7 +11,7 @@ export const StyledSearchBar = styled(SectionContainer).attrs((props) => ({
   column-gap: 1rem;
   padding: 1rem 6rem;
   .logo {
-    width: 70px;
+    width: 60px;
   }
   .inputContainer {
     position: relative;

@@ -1,7 +1,12 @@
-interface PublicRoutesConfig {
+interface RoutesConfig {
   HOME: string;
+  RESULTS: string;
+  PRODUCT_DETAIL: string;
 }
 
-export const PUBLIC_ROUTES: PublicRoutesConfig = {
+export const ROUTES: RoutesConfig = {
   HOME: '/',
+  RESULTS: '/items',
+  // RESULTS: '/items?search=',
+  PRODUCT_DETAIL: '/items/:id',
 };

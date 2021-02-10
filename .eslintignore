@@ -1,0 +1,7 @@
+node_modules
+dist
+scripts/*
+.eslintrc.js
+__mocks__/fileMock.js
+setupTests.js
+jest.config.js

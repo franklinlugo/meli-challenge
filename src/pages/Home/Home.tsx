@@ -1,7 +1,8 @@
 import * as React from 'react';
+import SearchBar from './SearchBar';
 
 const Home: React.FC = () => {
-  return <h1>Home</h1>;
+  return <SearchBar />;
 };
 
 export default Home;

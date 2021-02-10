@@ -14,4 +14,5 @@ interface Palette {
   dustyGray: string;
   gallery: string;
   dodgerBlue: string;
+  white: string;
 }

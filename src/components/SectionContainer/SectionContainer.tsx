@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 type SectionContainerProps = {
   className?: string;
-  rootClassName?: string;
+  rootStyles?: React.CSSProperties;
   id?: string;
 };
 
@@ -14,9 +14,9 @@ const Inner = styled.div`
   max-width: ${({ theme }) => theme.layoutMaxWidth};
 `;
 
-const SectionContainer: React.FC<SectionContainerProps> = ({ children, className, rootClassName, id }) => {
+const SectionContainer: React.FC<SectionContainerProps> = ({ children, className, rootStyles, id }) => {
   return (
-    <Root className={rootClassName} id={id}>
+    <Root style={rootStyles} id={id}>
       <Inner className={className}>{children}</Inner>
     </Root>
   );

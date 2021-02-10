@@ -8,6 +8,7 @@ export const theme: DefaultTheme = {
     dustyGray: '#999999',
     gallery: '#eeeeee',
     dodgerBlue: '#348efa',
+    white: '#ffffff',
   },
   layoutMaxWidth: '120rem', // 1920px
 };

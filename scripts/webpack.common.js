@@ -56,7 +56,7 @@ module.exports = {
   resolve: {
     alias: {
       '@pages': `${paths.src}/pages`,
-      '@components': `${paths.src}/components`,
+      shared: `${paths.src}/shared`,
       styles: `${paths.src}/styles`,
       assets: `${paths.src}/assets`,
       utils: `${paths.src}/utils`,

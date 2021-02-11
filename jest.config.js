@@ -6,7 +6,7 @@ module.exports = {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/fileMock.js',
     '^@pages$': '<rootDir>/src/pages',
-    '^@components$': '<rootDir>/src/components',
+    '^shared$': '<rootDir>/src/shared',
     '^styles$': '<rootDir>/src/styles',
     '^assets$': '<rootDir>/src/assets',
     '^utils$': '<rootDir>/src/utils',

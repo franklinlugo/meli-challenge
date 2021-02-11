@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SectionContainer } from '@components';
+import { SectionContainer } from 'shared';
 
 export const StyledSearchBar = styled(SectionContainer).attrs((props) => ({
   rootStyles: {
@@ -10,11 +10,14 @@ export const StyledSearchBar = styled(SectionContainer).attrs((props) => ({
   grid-template-columns: min-content 1fr;
   column-gap: 1rem;
   padding: 1rem 6rem;
-  .logo {
-    width: 60px;
+  .linkLogo {
+    img {
+      width: 60px;
+    }
   }
   .inputContainer {
     position: relative;
+    overflow: hidden;
     .input {
       width: 100%;
       height: 100%;

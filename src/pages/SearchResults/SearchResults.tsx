@@ -1,13 +1,11 @@
 import * as React from 'react';
-import SearchBar from './SearchBar';
+import { Breadcrumbs } from 'shared';
 import SearchResultsLayout from './SearchResultsLayout';
-import Breadcrumbs from './Breadcrumbs';
 import Results from './Results';
 
-const Home: React.FC = () => {
+const SearchResults: React.FC = () => {
   return (
     <>
-      <SearchBar />
       <SearchResultsLayout>
         <Breadcrumbs />
         <Results />
@@ -16,4 +14,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default SearchResults;

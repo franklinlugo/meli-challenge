@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { SectionContainer } from '@components';
+import { SectionContainer } from 'shared';
 
 const StyledSearchResults = styled(SectionContainer).attrs((props) => ({
   rootStyles: {

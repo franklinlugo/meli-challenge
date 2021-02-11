@@ -1,12 +1,11 @@
 interface RoutesConfig {
   HOME: string;
-  RESULTS: string;
+  SEARCH_RESULTS: string;
   PRODUCT_DETAIL: string;
 }
 
 export const ROUTES: RoutesConfig = {
   HOME: '/',
-  RESULTS: '/items',
-  // RESULTS: '/items?search=',
+  SEARCH_RESULTS: '/items',
   PRODUCT_DETAIL: '/items/:id',
 };

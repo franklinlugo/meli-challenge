@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AspectRatioBox } from '@components';
+import { AspectRatioBox } from 'shared';
 import { StyledResultItem } from './ResultItemStyles';
 
 const ResultItem: React.FC = () => {

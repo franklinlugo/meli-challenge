@@ -8,8 +8,9 @@ const paths = require('./paths');
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: paths.build,
     filename: '[name].js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],

@@ -27,13 +27,14 @@ export const Box = styled.div<BoxProps>`
 
 type AspectRatioBoxProps = {
   ratio?: string;
+  className?: string;
 };
 
-const AspectRatioBox: React.FC<AspectRatioBoxProps> = ({ ratio = '16:9', children }) => {
+const AspectRatioBox: React.FC<AspectRatioBoxProps> = ({ ratio = '16:9', className, children }) => {
   const [ratioWidth, ratioHeight] = ratio.split(':');
 
   return (
-    <Box ratioWidth={ratioWidth} ratioHeight={ratioHeight}>
+    <Box ratioWidth={ratioWidth} ratioHeight={ratioHeight} className={className}>
       <div className="innerBox">{children}</div>
     </Box>
   );

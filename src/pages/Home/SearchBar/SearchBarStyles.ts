@@ -18,7 +18,7 @@ export const StyledSearchBar = styled(SectionContainer).attrs((props) => ({
     .input {
       width: 100%;
       height: 100%;
-      padding: 0 5rem 0 1rem;
+      padding: 0 4rem 0 1rem;
       font-size: 18px;
       color: ${({ theme }) => theme.palette.dustyGray};
       background-color: ${({ theme }) => theme.palette.white};
@@ -33,7 +33,7 @@ export const StyledSearchBar = styled(SectionContainer).attrs((props) => ({
       justify-content: center;
       align-items: center;
 
-      width: 4rem;
+      width: 3rem;
       height: 100%;
       background-color: ${({ theme }) => theme.palette.gallery};
       border: none;
@@ -41,7 +41,7 @@ export const StyledSearchBar = styled(SectionContainer).attrs((props) => ({
       cursor: pointer;
 
       img {
-        width: 2rem;
+        width: 1.2rem;
       }
     }
   }

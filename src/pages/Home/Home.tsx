@@ -1,12 +1,17 @@
 import * as React from 'react';
 import SearchBar from './SearchBar';
-import SearchResults from './SearchResults';
+import SearchResultsLayout from './SearchResultsLayout';
+import Breadcrumbs from './Breadcrumbs';
+import Results from './Results';
 
 const Home: React.FC = () => {
   return (
     <>
       <SearchBar />
-      <SearchResults />
+      <SearchResultsLayout>
+        <Breadcrumbs />
+        <Results />
+      </SearchResultsLayout>
     </>
   );
 };

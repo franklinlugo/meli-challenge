@@ -1,0 +1,25 @@
+{
+  "name": "meli-challenge-api",
+  "version": "1.0.0",
+  "description": "meli challenge api",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --experimental-modules src/index.js"
+  },
+  "type": "module",
+  "author": "franklin lugo <franklinlugo2805@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
+  }
+}

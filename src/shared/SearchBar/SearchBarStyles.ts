@@ -1,13 +1,9 @@
 import styled from 'styled-components';
-import { SectionContainer } from 'shared';
 
-export const StyledSearchBar = styled(SectionContainer).attrs((props) => ({
-  rootStyles: {
-    backgroundColor: props.theme.palette.turbo,
-  },
-}))`
+export const StyledSearchBar = styled.div`
   display: grid;
   grid-template-columns: min-content 1fr;
+  width: 100%;
   column-gap: 1rem;
   padding: 1rem 6rem;
   .linkLogo {

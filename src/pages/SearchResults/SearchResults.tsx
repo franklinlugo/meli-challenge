@@ -1,16 +1,14 @@
 import * as React from 'react';
 import { Breadcrumbs } from 'shared';
-import SearchResultsLayout from './SearchResultsLayout';
 import Results from './Results';
+import { StyledSearchResults } from './SearchResultsStyles';
 
 const SearchResults: React.FC = () => {
   return (
-    <>
-      <SearchResultsLayout>
-        <Breadcrumbs />
-        <Results />
-      </SearchResultsLayout>
-    </>
+    <StyledSearchResults>
+      <Breadcrumbs />
+      <Results />
+    </StyledSearchResults>
   );
 };
 

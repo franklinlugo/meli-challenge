@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { Breadcrumbs } from 'shared';
 import { useParams } from 'react-router-dom';
+import { StyledProductDetail } from './ProductDetailStyles';
 
 interface ParamTypes {
   id: string;
@@ -8,9 +10,10 @@ interface ParamTypes {
 const ProductDetail: React.FC = () => {
   const { id } = useParams<ParamTypes>();
   return (
-    <div>
+    <StyledProductDetail>
+      <Breadcrumbs />
       <span>id: {id}</span>
-    </div>
+    </StyledProductDetail>
   );
 };
 

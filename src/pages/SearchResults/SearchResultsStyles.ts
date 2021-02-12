@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const StyledProductDetail = styled.div`
+export const StyledSearchResults = styled.div`
   padding: 0 6rem;
 `;

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Breadcrumbs } from 'shared';
 import { useLocation } from 'react-router-dom';
-import { useMutation } from 'react-query';
+import { useQuery } from 'react-query';
 import Results from './Results';
 import { StyledSearchResults } from './SearchResultsStyles';
 
-function useQuery() {
+function useQueryParams() {
   return new URLSearchParams(useLocation().search);
 }
 
@@ -26,23 +26,21 @@ function useDebounce(value: string, delay = 500) {
 }
 
 const SearchResults: React.FC = () => {
-  const query = useQuery();
+  const query = useQueryParams();
   const searchQuery = query.get('search');
   const debouncedSearchQuery = useDebounce(searchQuery as string, 600);
 
-  function search(term: string) {
-    return fetch(`http://localhost:4000/items?search=${term}`).then((res) => res.json());
+  function search() {
+    return fetch(`http://localhost:4000/items?search=${debouncedSearchQuery}`).then((res) => res.json());
   }
 
-  const { mutate, isLoading, isError, data } = useMutation((term: string) => search(term));
+  const { refetch, isLoading, isError, data } = useQuery(debouncedSearchQuery, search, {
+    enabled: false,
+  });
 
   React.useEffect(() => {
-    mutate(debouncedSearchQuery);
-  }, [mutate, debouncedSearchQuery]);
-
-  React.useEffect(() => {
-    console.log('data', data);
-  }, [data]);
+    refetch();
+  }, [refetch, debouncedSearchQuery]);
 
   if (isLoading) {
     return (

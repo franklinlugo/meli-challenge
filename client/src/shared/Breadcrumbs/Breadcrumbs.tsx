@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { StyledBreadcrumbs } from './BreadcrumbsStyles';
 
-const Breadcrumbs: React.FC = () => {
-  return (
-    <StyledBreadcrumbs>
-      foo {'>'} bar {'>'} foobar {'>'} foo
-    </StyledBreadcrumbs>
-  );
+type BreadcrumbsProps = {
+  categories: string[];
+};
+
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ categories = [] }) => {
+  return <StyledBreadcrumbs>{categories.join(' > ')}</StyledBreadcrumbs>;
 };
 
 export default Breadcrumbs;

@@ -11,7 +11,7 @@ const ProductDetail: React.FC = () => {
   const { id } = useParams<ParamTypes>();
   return (
     <StyledProductDetail>
-      <Breadcrumbs />
+      {/* <Breadcrumbs /> */}
       <div className="productCard">
         <div className="productImage">
           <div className="image">

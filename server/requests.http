@@ -1,5 +1,5 @@
 ### get search results
-GET http://localhost:3000/items?search=mouse
+GET http://localhost:4000/items?search=bici
 
 ### get item detail
 GET http://localhost:3000/items/MLA853204642

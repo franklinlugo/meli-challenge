@@ -22,7 +22,7 @@ export const StyledResultItem = styled.article`
       font-size: 1.5rem;
       line-height: 1;
     }
-    .description {
+    .title {
       padding-top: 2rem;
       font-size: 1.125rem;
       line-height: 1;

@@ -1,5 +1,5 @@
-###
-GET http://localhost:3000
-
-### search items by term
+### get search results
 GET http://localhost:3000/items?search=mouse
+
+### get item detail
+GET http://localhost:3000/items/MLA853204642

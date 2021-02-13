@@ -1,53 +1,8 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import { buildItemsList, buildCategories, buildItem } from '../utils/index.js';
 
 const router = express.Router();
-
-function buildItemsList(response) {
-  const { results } = response;
-  return results.map((item) => ({
-    id: item.id,
-    title: item.title,
-    price: {
-      currency: item.currency_id,
-      amount: item.price,
-      decimals: 0,
-    },
-    picture: item.thumbnail,
-    condition: item.condition,
-    free_shipping: item.shipping.free_shipping,
-  }));
-}
-
-function buildCategories(response) {
-  try {
-    const categories = response.filters.find(({ id }) => id === 'category');
-    const values = categories.values[0].path_from_root;
-    return values.reduce((acc, value) => {
-      acc.push(value.name);
-      return acc;
-    }, []);
-  } catch (error) {
-    return [];
-  }
-}
-
-function buildItem(item, description) {
-  return {
-    id: item.id,
-    title: item.title,
-    price: {
-      currency: item.currency_id,
-      amount: item.price,
-      decimals: 0,
-    },
-    picture: item.pictures[0].url,
-    condition: item.condition,
-    free_shipping: item.shipping.free_shipping,
-    sold_quantity: item.sold_quantity,
-    description: description.plain_text
-  };
-}
 
 router.get('/items', async (req, res) => {
   const searchTerm = req.query.search;

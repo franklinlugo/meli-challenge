@@ -11,6 +11,7 @@ export const StyledResultItem = styled.article`
   }
   .image {
     border-radius: 4px;
+    cursor: pointer;
   }
   .productInfo {
     display: grid;

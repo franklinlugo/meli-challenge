@@ -34,7 +34,7 @@ const SearchResults: React.FC = () => {
     return fetch(`http://localhost:4000/items?search=${term}`).then((res) => res.json());
   }
 
-  const { mutate, isLoading, isError, isSuccess, data } = useMutation((term: string) => search(term));
+  const { mutate, isLoading, isError, data } = useMutation((term: string) => search(term));
 
   React.useEffect(() => {
     mutate(debouncedSearchQuery);

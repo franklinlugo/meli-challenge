@@ -28,24 +28,17 @@ export const Box = styled.div<BoxProps>`
 type AspectRatioBoxProps = {
   ratio?: string;
   className?: string;
+  onClick?: () => void;
 };
 
-const AspectRatioBox: React.FC<AspectRatioBoxProps> = ({ ratio = '16:9', className, children }) => {
+const AspectRatioBox: React.FC<AspectRatioBoxProps> = ({ ratio = '16:9', className, onClick, children }) => {
   const [ratioWidth, ratioHeight] = ratio.split(':');
 
   return (
-    <Box ratioWidth={ratioWidth} ratioHeight={ratioHeight} className={className}>
+    <Box ratioWidth={ratioWidth} ratioHeight={ratioHeight} className={className} onClick={onClick}>
       <div className="innerBox">{children}</div>
     </Box>
   );
 };
-
-// function ratioPropType(props, propName, componentName) {
-//   const { ratio } = props;
-//   if (!/\d{1,2}:\d{1,2}/.test(ratio)) {
-//     return new Error(`Invalid prop ${propName} supplied to ${componentName}. Validation failed.`);
-//   }
-//   return null;
-// }
 
 export default AspectRatioBox;

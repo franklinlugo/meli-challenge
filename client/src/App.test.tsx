@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import renderWithProviders from 'utils/tests/renderWithProviders';
 import App from './App';
 
 // eslint-disable-next-line jest/expect-expect
 test('App render', () => {
-  render(<App />);
+  renderWithProviders(<App />);
 });

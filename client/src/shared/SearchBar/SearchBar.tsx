@@ -1,12 +1,18 @@
 import * as React from 'react';
 import logo from 'assets/images/logo.png';
 import searchLogo from 'assets/images/searchLogo.png';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { ROUTES } from 'constants/routes';
 import { StyledSearchBar } from './SearchBarStyles';
 
+function useQueryParams() {
+  return new URLSearchParams(useLocation().search);
+}
+
 const SearchBar: React.FC = () => {
-  const [searchTerm, setSearchTerm] = React.useState('');
+  const query = useQueryParams();
+  const searchQuery = query.get('search');
+  const [searchTerm, setSearchTerm] = React.useState(searchQuery || '');
   const history = useHistory();
 
   function handleSearchTerm(event: React.ChangeEvent<HTMLInputElement>) {
@@ -15,6 +21,7 @@ const SearchBar: React.FC = () => {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!searchTerm) return;
     history.push(`/items?search=${searchTerm}`);
   }
 

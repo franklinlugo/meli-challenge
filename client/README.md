@@ -1,28 +1,20 @@
-# Meli Challenge - Franklin Lugo @franklinlugo2805@gmail.com
-
-## Run with node
+# Start client
 
 node >= 12 is required
 
-### Install dependencies
+## Install dependencies
 
 `$ npm install`
 
-### Run dev environment
+## Run dev environment
 
 `$ npm start`
-
-### Production build
-
-`$ npm run build`
-
-and serve the `dist` folder
 
 ## Run with docker
 
 ### Build image
 
-`$ docker build -t meli-challenge .`
+`$ docker build -t meli-challenge-client .`
 
 ### Run container
 
@@ -33,9 +25,9 @@ docker run \
 -v ${pwd}:/app \
 -v /app/node_modules \
 -p 3000:3000 \
-meli-challenge
+meli-challenge-client
 ```
 
-### Build image and run container with docker-compose
+## Start client using docker and docker-compose
 
 `$ docker-compose up --build`

@@ -25,8 +25,9 @@ export const StyledSearchBar = styled.div`
     }
     .searchBtn {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 50%;
+      right: 1px;
+      transform: translateY(-50%);
 
       display: flex;
       justify-content: center;
@@ -34,11 +35,13 @@ export const StyledSearchBar = styled.div`
 
       width: 3rem;
       height: 100%;
+      height: calc(100% - 2px);
       background-color: ${({ theme }) => theme.palette.gallery};
       border: none;
       outline: none;
       cursor: pointer;
-
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
       img {
         width: 1.2rem;
       }

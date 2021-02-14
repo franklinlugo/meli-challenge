@@ -30,4 +30,6 @@ meli-challenge-client
 
 ## Start client using docker and docker-compose
 
+`docker` and `docker-compose` are required
+
 `$ docker-compose up --build`

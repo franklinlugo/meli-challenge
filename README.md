@@ -28,6 +28,6 @@ node >= 12 is required
 
 ## Start client and server with docker and docker-compose
 
-`docker` and `docker-compose` is required
+`docker` and `docker-compose` are required
 
 `$ docker-compose up --build`

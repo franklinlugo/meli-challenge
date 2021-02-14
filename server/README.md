@@ -30,6 +30,6 @@ meli-challenge-server
 
 ## Start server using docker and docker-compose
 
-`docker` and `docker-compose` is required
+`docker` and `docker-compose` are required
 
 `$ docker-compose up --build`

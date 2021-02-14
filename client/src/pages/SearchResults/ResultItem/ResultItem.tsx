@@ -1,20 +1,8 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import { AspectRatioBox } from 'shared';
+import { Item as ResultItemProps } from 'constants/types';
 import { StyledResultItem } from './ResultItemStyles';
-
-type ResultItemProps = {
-  id: string;
-  title: string;
-  price: {
-    currency: string;
-    amount: number;
-    decimals: number;
-  };
-  picture: string;
-  condition: string;
-  free_shipping: boolean;
-};
 
 const ResultItem: React.FC<ResultItemProps> = ({ id, title, picture, price }) => {
   const formattedPrice = String(price.amount.toFixed()).replace(/\d(?=(\d{3})+$)/g, '$&.');

@@ -1,6 +1,6 @@
 import express from 'express';
 import fetch from 'node-fetch';
-import { buildItemsList, buildCategories, buildItem } from '../utils/index.js';
+import { buildItemsList, buildCategories, buildItem, buildProductCategories } from '../utils/index.js';
 
 const router = express.Router();
 
@@ -29,10 +29,17 @@ router.get('/items/:id', async (req, res) => {
     const [itemRawResponse, descriptionRawResponse] = await Promise.all(requests);
     const [item, description] = await Promise.all([itemRawResponse.json(), descriptionRawResponse.json()]);
 
+    const categoryId = item.category_id;
+
+    const rawitemCategories = await fetch(`https://api.mercadolibre.com/categories/${categoryId}`);
+    const itemCategories = await rawitemCategories.json();
+
+
     const author = { name: 'Franklin', lastName: 'Lugo' };
     const itemObj = buildItem(item, description);
+    const categories = buildProductCategories(itemCategories)
 
-    res.status(200).json({author, item: itemObj});
+    res.status(200).json({author, item: itemObj, categories});
   } catch (error) {
     res.status(400).send();
   }

@@ -8,8 +8,8 @@ const paths = require('./paths');
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    path: paths.build,
     filename: '[name].js',
+    path: paths.build,
     publicPath: '/',
   },
   resolve: {
@@ -57,9 +57,11 @@ module.exports = {
     alias: {
       '@pages': `${paths.src}/pages`,
       shared: `${paths.src}/shared`,
+      services: `${paths.src}/services`,
       styles: `${paths.src}/styles`,
       assets: `${paths.src}/assets`,
       utils: `${paths.src}/utils`,
+      constants: `${paths.src}/constants`,
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },

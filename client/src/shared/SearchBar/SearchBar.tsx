@@ -2,11 +2,10 @@ import * as React from 'react';
 import logo from 'assets/images/logo.png';
 import searchLogo from 'assets/images/searchLogo.png';
 import { Link, useHistory } from 'react-router-dom';
-import { ROUTES } from 'utils/constants/routes';
+import { ROUTES } from 'constants/routes';
 import { StyledSearchBar } from './SearchBarStyles';
 
 const SearchBar: React.FC = () => {
-  const inputRef = React.useRef<HTMLInputElement>(null);
   const [searchTerm, setSearchTerm] = React.useState('');
   const history = useHistory();
 
@@ -14,16 +13,9 @@ const SearchBar: React.FC = () => {
     setSearchTerm(event.target.value);
   }
 
-  React.useEffect(() => {
-    if (searchTerm) {
-      history.push(`items?search=${searchTerm}`);
-    } else {
-      history.push('/');
-    }
-  }, [history, searchTerm]);
-
-  function handleSearchBtn() {
-    inputRef?.current?.focus();
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    history.push(`/items?search=${searchTerm}`);
   }
 
   return (
@@ -31,19 +23,12 @@ const SearchBar: React.FC = () => {
       <Link to={ROUTES.HOME} className="linkLogo">
         <img src={logo} alt="logo" />
       </Link>
-      <div className="inputContainer">
-        <input
-          className="input"
-          type="text"
-          name="searchTerm"
-          ref={inputRef}
-          value={searchTerm}
-          onChange={handleSearchTerm}
-        />
-        <button className="searchBtn" type="button" onClick={handleSearchBtn}>
+      <form className="form" onSubmit={handleSubmit}>
+        <input className="input" type="text" name="searchTerm" value={searchTerm} onChange={handleSearchTerm} />
+        <button className="searchBtn" type="submit">
           <img src={searchLogo} alt="logo" />
         </button>
-      </div>
+      </form>
     </StyledSearchBar>
   );
 };

@@ -21,13 +21,13 @@
     "paths": {
       "@pages": ["./pages"],
       "shared": ["./shared"],
+      "services": ["./services"],
       "styles": ["./styles"],
       "assets": ["./assets"],
-      "utils": ["./utils"]
+      "utils": ["./utils"],
+      "constants": ["./constants"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
-// "jsx": "preserve",
-// "noEmit": true,

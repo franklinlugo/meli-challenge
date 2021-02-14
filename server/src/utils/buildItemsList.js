@@ -1,6 +1,6 @@
 function buildItemsList(response) {
   const { results } = response;
-  return results.map((item) => ({
+  return results.slice(0, 4).map((item) => ({
     id: item.id,
     title: item.title,
     price: {

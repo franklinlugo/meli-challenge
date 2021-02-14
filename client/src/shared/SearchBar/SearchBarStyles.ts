@@ -11,7 +11,7 @@ export const StyledSearchBar = styled.div`
       width: 60px;
     }
   }
-  .inputContainer {
+  .form {
     position: relative;
     overflow: hidden;
     .input {

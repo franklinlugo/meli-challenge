@@ -17,6 +17,5 @@ ReactDOM.render(
       </QueryClientProvider>
     </Router>
   </ThemeProvider>,
-
   document.getElementById('app'),
 );

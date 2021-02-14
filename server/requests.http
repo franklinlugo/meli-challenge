@@ -2,4 +2,4 @@
 GET http://localhost:4000/items?search=bici
 
 ### get item detail
-GET http://localhost:3000/items/MLA853204642
+GET http://localhost:4000/items/MLA905094094

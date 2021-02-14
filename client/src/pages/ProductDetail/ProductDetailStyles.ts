@@ -13,8 +13,6 @@ export const StyledProductDetail = styled.div`
         display: flex;
         justify-content: center;
         img {
-          /* width: 100%;
-          height: 300px; */
           max-width: 100%;
         }
       }
